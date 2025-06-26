@@ -24,7 +24,7 @@ public class Homework3 {
     }
 
     @Test
-    public void findElementByxpath() {
+    public void findElementByTagXpath() {
 
         //tagName
         WebElement ul = driver.findElement(By.xpath("//ul"));
@@ -36,7 +36,7 @@ public class Homework3 {
     }
 
     @Test
-    public void findElementByXpath() {
+    public void findElementByIDXpath() {
         //id
         driver.findElement(By.cssSelector("#small-searchterms"));
         driver.findElement(By.xpath("//*[@id='small-searchterms']"));
@@ -50,7 +50,7 @@ public class Homework3 {
     }
 
     @Test
-    public void findElementByClassNameCssSelector() {
+    public void findElementByClassNameXpath() {
         //className
 
          WebElement element2 = driver.findElement(By.xpath("//*[contains(@class,'footer-disclaimer')]"));
@@ -67,10 +67,6 @@ public class Homework3 {
         WebElement element3 = driver.findElement(By.xpath("//*[@class='cart-label']"));
         System.out.println(element3.getText());
 
-       // driver.get("https://demowebshop.tricentis.com/gift-cards");
-        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-       // WebElement element = driver.findElement(By.cssSelector(".footer-poweredby"));
-       // System.out.println(element2.getText());
 
     }
 
@@ -82,7 +78,7 @@ public class Homework3 {
     }
 
     @Test
-    public void keyValuecCssSelector() {
+    public void keyValueXPath() {
        // WebElement register = driver.findElement(By.cssSelector("[href='/register']"));
        // System.out.println(register.getText());
         WebElement register = driver.findElement(By.xpath("//*[@href='/register']"));
