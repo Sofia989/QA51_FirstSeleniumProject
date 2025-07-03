@@ -15,17 +15,15 @@ public class CreateAccountTests extends TestBase{
     public void newUserRegistrationPositiveTest(){
     int i=(int)(System.currentTimeMillis()/1000)%3600;
 
-
+     User user=new User()
     //click on Registerlink
-    click(By.cssSelector(".ico-register"));
-    //fill in registration form
-    type(By.cssSelector("#FirstName"), "Lena");
-    type(By.cssSelector("#LastName"), "Ivanova");
-    type(By.cssSelector("#Email"), "Lenali"+i+"@gmail.com");
-    type(By.cssSelector("#Password"), "Lenali123!#$");
-    type(By.cssSelector("#ConfirmPassword"), "Lenali123!#$");
-    //click Registartion button
-    click(By.cssSelector("#register-button"));
+            .setFirstName("Lena")
+             .setLastName("Ivanova")
+             .setEmail("Lenali"+i+"@gmail.com")
+             .setPassword("Lenali123!#$")
+             .setConfirmPassword("Lenali123!#$");
+         fillRegistrationForm(user);
+
     //check email  button is present
     Assert.assertTrue(isElementPresent(By.xpath("(//a[@href='/customer/info'])[1]")));
 
