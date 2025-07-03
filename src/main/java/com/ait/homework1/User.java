@@ -35,8 +35,6 @@ public class User{
         return this;
     }
 
-
-
     public String getEmail() {
         return email;
     }

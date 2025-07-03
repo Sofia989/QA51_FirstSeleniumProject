@@ -15,5 +15,4 @@ public class LoginTest extends TestBase {
         //button login
     }
 
-
 }

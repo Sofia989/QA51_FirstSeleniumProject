@@ -28,7 +28,6 @@ public class CreateAccountTests extends TestBase{
     Assert.assertTrue(isElementPresent(By.xpath("(//a[@href='/customer/info'])[1]")));
 
 }
-
     @Test
     public void existedUserRegistrationNegativeTest(){
 

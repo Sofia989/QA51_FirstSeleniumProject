@@ -17,7 +17,6 @@ public class AddItemToCartTest extends TestBase {
         //fill password
         //button login
     }
-
     @Test
     public void addItemToCartTest() {
         addItemToCart(".item-box:nth-child(3)", "#add-to-cart-button-31");

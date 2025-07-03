@@ -84,6 +84,5 @@ public class TestBase {
         click(By.cssSelector("#register-button")); // ← жмём "Register"
     }
 
-
 }
 
