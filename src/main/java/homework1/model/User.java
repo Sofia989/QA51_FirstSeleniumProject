@@ -1,4 +1,4 @@
-package com.ait.homework1;
+package homework1.model;
 
 public class User{
 
