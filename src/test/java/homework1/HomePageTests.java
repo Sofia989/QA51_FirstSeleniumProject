@@ -8,8 +8,13 @@ public class HomePageTests extends TestBase {
 
     @BeforeMethod
     public void ensurePrecondition(){
+        if (!app.getHomePageHelper().isHomeComponentPresent()) {
+            app.getHomePageHelper().clickOnHomeLink();
+        }
 
-        app.getDriver().navigate().to("https://demowebshop.tricentis.com/");
+
+        //"a.nivo-imageLink:nth-child(2)")
+        //app.getDriver().navigate().to("https://demowebshop.tricentis.com/");
     }
 
 

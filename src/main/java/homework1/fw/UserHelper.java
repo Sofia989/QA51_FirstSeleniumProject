@@ -33,7 +33,7 @@ public class UserHelper extends BaseHelper {
         click(By.cssSelector("#register-button"));
     }
 
-    public void clickOnSignOutButton() {
+    public void clickOnSignOutLink() {
         click(By.cssSelector(".ico-logout"));
 
     }
@@ -45,4 +45,6 @@ public class UserHelper extends BaseHelper {
     public boolean isUserLoggedIn() {
         return isElementPresent(By.cssSelector(".ico-logout"));
     }
+
+
 }

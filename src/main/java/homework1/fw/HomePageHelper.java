@@ -9,7 +9,12 @@ public class HomePageHelper extends BaseHelper {
         super(driver);
     }
 
-    public boolean isHomeComponentPresent(){
-        return driver.findElements(By.cssSelector("a.nivo-imageLink:nth-child(2)")).size()>0;
+    public boolean isHomeComponentPresent() {
+        return isElementPresent(By.cssSelector("a.nivo-imageLink:nth-child(2)"));
+    }
+
+    public void clickOnHomeLink() {
+        click(By.cssSelector(".header-logo a"));
+
     }
 }

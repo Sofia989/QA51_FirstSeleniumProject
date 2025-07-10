@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SmokeTest" verbose="1">
+    <test name="PositiveTests">
+        <classes>
+            <class name="homework1.CreateAccountTests">
+                <methods>
+                    <include name=".*Positive.*"/>
+                </methods>
+
+            </class>
+            <class name="homework1.CreateAccountTests">
+                <methods>
+                    <exclude name=".*Negative.*"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+    <!--    <test name="Regression1">-->
+    <!--        <classes>-->
+    <!--            <class name="test.sample.ParameterSample"/>-->
+    <!--            <class name="test.sample.ParameterTest"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+</suite>

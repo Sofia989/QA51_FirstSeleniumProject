@@ -11,7 +11,7 @@ public class CreateAccountTests extends TestBase {
     @BeforeMethod
     public void ensurePrecondition() {
         if (!app.getUserHelper().isLoginLinkPresent()) {
-            app.getUserHelper().clickOnSignOutButton();
+            app.getUserHelper().clickOnSignOutLink();
         }
 
     }
