@@ -1,6 +1,5 @@
 package homework1;
 
-import homework1.fw.ValidationHelper;
 import homework1.model.User;
 import homework1.utils.MyDataProviders;
 import org.openqa.selenium.By;
@@ -92,7 +91,7 @@ public class CreateAccountTests extends TestBase {
     public void newUserRegistrationNegativeFromDataProviderTest(User user) {
 
 
-        System.out.println(" Тест негативной регистрации для: " + user.getFirstName() + " " + user.getLastName() + " | Email: " + user.getEmail());
+        System.out.println("Negative registration test for: " + user.getFirstName() + " " + user.getLastName() + " | Email: " + user.getEmail());
 
         app.getUserHelper().fillRegistrationForm(user);
         app.getUserHelper().click(By.cssSelector("#register-button"));
@@ -117,73 +116,71 @@ public class CreateAccountTests extends TestBase {
         System.out.println(" Password error: '" + passwordErrorText + "'");
         System.out.println(" Confirm password error: '" + confirmPasswordErrorText + "'");
 
-        boolean hasErrors=false;
+        boolean hasErrors = false;
 
 
         if (user.getFirstName().isEmpty()) {
             if (firstNameErrorText.isEmpty()) {
-                Assert.fail(" Нет ошибки по First Name, хотя поле пустое у: " + user.getEmail());
+                Assert.fail("No error for First Name, although the field is empty for: " + user.getEmail());
             } else {
                 Assert.assertEquals(firstNameErrorText, "First name is required.",
-                        "Неверный текст ошибки по First Name у: " + user.getEmail());
+                        "Incorrect error message for First Name of:: " + user.getEmail());
             }
-            hasErrors=true;
+            hasErrors = true;
         }
 
 
         if (user.getLastName().isEmpty()) {
             if (lastNameErrorText.isEmpty()) {
-                Assert.fail(" Нет ошибки по Last Name у: " + user.getEmail());
+                Assert.fail("No error for Last Name of:: " + user.getEmail());
             } else {
                 Assert.assertEquals(lastNameErrorText, "Last name is required.");
             }
-            hasErrors=true;
+            hasErrors = true;
         }
 
 
         if (!user.getEmail().contains("@")) {
             if (emailErrorText.isEmpty()) {
-                Assert.fail(" Ошибка по Email не появилась у: " + user.getEmail());
+                Assert.fail("No error for Email of: " + user.getEmail());
             } else {
                 Assert.assertTrue(emailErrorText.contains("Wrong email"),
-                        " Текст ошибки Email не совпадает у: " + user.getEmail());
+                        "Email error message does not match for: " + user.getEmail());
             }
-            hasErrors=true;
+            hasErrors = true;
         }
 
-        // ✔ Страховка для Confirm Password
+
         if (!user.getPassword().equals(user.getConfirmPassword())) {
             if (confirmPasswordErrorText.isEmpty()) {
-                Assert.fail(" Нет ошибки по подтверждению пароля у: " + user.getEmail());
+                Assert.fail("No error for confirm password of: " + user.getEmail());
             } else {
                 Assert.assertEquals(confirmPasswordErrorText,
                         "The password and confirmation password do not match.",
-                        " Ошибка подтверждения пароля не совпадает у: " + user.getEmail());
+                        " Confirm password error message does not match for: " + user.getEmail());
             }
-            hasErrors=true;
+            hasErrors = true;
         }
 
 
         if (user.getPassword().length() < 6) {
             if (passwordErrorText.isEmpty()) {
-                Assert.fail(" Ошибка по длине пароля не отображается у: " + user.getEmail());
+                Assert.fail(" Password length error does not appear for:" + user.getEmail());
             } else {
                 Assert.assertEquals(passwordErrorText,
                         "The password should have at least 6 characters.");
 
 
             }
-            hasErrors=true;
+            hasErrors = true;
 
         }
-        if(!hasErrors){
-        System.out.println(" Все поля валидны у: " + user.getFirstName() + " " + user.getLastName() + " | " + user.getEmail());
+        if (!hasErrors) {
+            System.out.println("All fields are valid for" + user.getFirstName() + " " + user.getLastName() + " | " + user.getEmail());
+        }
+
+
     }
-
-        ValidationHelper validator = new ValidationHelper();
-
-
-
-    }}
+}
 
 
