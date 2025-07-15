@@ -139,7 +139,6 @@ public class CreateAccountTests extends TestBase {
             hasErrors = true;
         }
 
-
         if (!user.getEmail().contains("@")) {
             if (emailErrorText.isEmpty()) {
                 Assert.fail("No error for Email of: " + user.getEmail());
