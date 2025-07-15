@@ -129,7 +129,6 @@ public class CreateAccountTests extends TestBase {
             hasErrors = true;
         }
 
-
         if (user.getLastName().isEmpty()) {
             if (lastNameErrorText.isEmpty()) {
                 Assert.fail("No error for Last Name of:: " + user.getEmail());

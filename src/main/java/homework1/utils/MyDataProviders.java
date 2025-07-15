@@ -33,7 +33,6 @@ public class MyDataProviders {
 
         return list.iterator();
 
-
     }
 
     @DataProvider

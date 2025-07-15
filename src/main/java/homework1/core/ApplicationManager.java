@@ -47,7 +47,6 @@ public class ApplicationManager {
         return driver;
     }
 
-
     public UserHelper getUserHelper() {
         return userHelper;
     }
