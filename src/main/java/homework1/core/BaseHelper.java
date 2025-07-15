@@ -6,15 +6,15 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class BaseHelper   {
+public class BaseHelper {
     protected WebDriver driver;
 
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
     }
 
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size()>0;
+    public boolean isElementPresent(By locator) {
+        return driver.findElements(locator).size() > 0;
     }
 
     public void type(By locator, String text) {
@@ -35,6 +35,7 @@ public class BaseHelper   {
         }
     }
 
-
-
 }
+
+
+

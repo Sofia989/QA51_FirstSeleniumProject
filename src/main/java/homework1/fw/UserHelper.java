@@ -47,4 +47,15 @@ public class UserHelper extends BaseHelper {
     }
 
 
-}
+    public String getText(By locator) {
+        return driver.findElement(locator).getText();
+    }
+    public boolean isElementPresent(By locator) {
+        try {
+            return driver.findElements(locator).size() > 0;
+        } catch (Exception e) {
+            return false;
+        }
+
+
+    }}
